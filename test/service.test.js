@@ -4,14 +4,14 @@ const supertest = require('supertest');
 
 describe('Service Tests', () => {
 	let request;
-	const sys = system();
+	// const sys = system();
 
 	before(async () => {
-		const { app } = await sys.start();
-		request = supertest(app);
+		// const { app } = await sys.start();
+		// request = supertest(app);
 	});
 
-	after(() => sys.stop());
+	// after(() => sys.stop());
 
 	it.skip('returns manifest', () =>
 		request
