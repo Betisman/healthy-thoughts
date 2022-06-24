@@ -11,14 +11,18 @@ module.exports = () => {
             appToken,
             port: process.env.PORT || 3000
           });
-          
+
           app.message(/.*/, async ({ message, say }) => {
             await say(`Hey there <@${message.user}>!`);
+            logger.info(`Message sent: Hey there <@${message.user}>!`);
           });
+
           await app.start();
-    }
+    };
+
     const stop = async () => {
         await app.stop()
-    }
-    return { start }
+    };
+
+    return { start, stop }
 }
