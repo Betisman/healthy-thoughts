@@ -17,6 +17,11 @@ module.exports = {
 			},
 		},
 	},
+	slack: {
+		botToken: process.env.SLACK_BOT_TOKEN,
+		appToken: process.env.SLACK_APP_TOKEN,
+		signingSecret: process.env.SLACK_SIGNING_SECRET
+	},
 	logger: {
 		transport: 'console',
 		include: [
