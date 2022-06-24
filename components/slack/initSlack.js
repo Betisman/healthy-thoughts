@@ -49,6 +49,11 @@ module.exports = () => {
             })
           });
 
+          app.action({block_id: 'accept_healthy_thoughts'}, async (params) => {
+            const {say} = params
+            say('You are now connected to you anonymous peer')
+          })
+
           await app.start();
     };
 
