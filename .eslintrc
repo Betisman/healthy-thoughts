@@ -1,0 +1,48 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "jest/globals": true,
+    "es2020": true
+  },
+  "plugins": [
+    "jest"
+  ],
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020
+  },
+  "rules": {
+    "camelcase": 0,
+    "no-param-reassign": "warn",
+    "max-len": [
+      "warn",
+      160
+    ],
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-constant-condition": 0,
+    "no-console": 0,
+    "no-tabs": 0,
+    "consistent-return": "warn",
+    "arrow-parens": 0
+  }
+}
