@@ -13,8 +13,7 @@ describe('Service Tests', () => {
 
 	after(() => sys.stop());
 
-
-	it('returns manifest', () =>
+	it.skip('returns manifest', () =>
 		request
 			.get('/__/manifest')
 			.expect(200)
@@ -26,5 +25,5 @@ describe('Service Tests', () => {
 				expect(response.headers['x-content-type-options']).to.equal('nosniff');
 				expect(response.headers['strict-transport-security']).to.equal('max-age=15552000; includeSubDomains');
 			}));
-	
+
 });
