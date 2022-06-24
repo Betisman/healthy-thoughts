@@ -1,6 +1,6 @@
 # healthy-thoughts
 
-
+## The backend of a slack bot to help and nurture our team mates
 
 
 # COMPONENTS
