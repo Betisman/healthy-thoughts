@@ -3,7 +3,6 @@ const { App } = require('@slack/bolt');
 module.exports = () => {
     let app
     const start = async ({config, logger}) => {
-        if (process.env.SERVICE_ENV !== 'local') return
         const {botToken: token, appToken, signingSecret} = config
         let friendUserChannel = ''
         let establishedRelation = false
