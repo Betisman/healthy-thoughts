@@ -74,6 +74,7 @@ module.exports = () => {
 
           app.action({block_id: 'accept_healthy_thoughts'}, async (params) => {
             const {say} = params
+            establishedRelation = true
             say('You\'re now anonymously connected to a MFHA');
           })
 
