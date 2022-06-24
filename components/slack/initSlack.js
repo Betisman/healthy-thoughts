@@ -11,16 +11,24 @@ module.exports = () => {
             appToken,
             port: process.env.PORT || 3000
           });
-          
-          app.message(/.*/, async (params) => { 
-            const {message, say, client} = params
-            await say(`Hey there <@${message.user}>!`)
-            logger.info(`Message sent: Hey there <@${message.user}>!`)
+
+          app.message(/.*/, async (params) => {
+            const {message, say, client} = params;
+            await say(`Hey there <@${message.user}>! I've let the *MHFA Team* know, they'll contact you soonish!! :smiley:`);
+            logger.info(`Hey there <@${message.user}>! I've let the *MHFA Team* know, they'll contact you soonish!! :smiley:`);
             await client.chat.postMessage({
               token,
               channel: 'C03LM3LEYP9',
-              text: `someone said ${message.text}`,
+              text: `Some mate wants to contact us: he/she has contacted us with this message ${message.text}`,
               blocks: [
+                {
+                  type: 'section',
+                  text: {
+                    type: 'mrkdwn',
+                    text: `Some mate wants to contact by saying ${message.text}`,
+                  },
+                  block_id: 'text1'
+                },
                 {
                   type: 'actions',
                   block_id: 'accept_healthy_thoughts',
@@ -30,7 +38,7 @@ module.exports = () => {
                       text: {
                         type: 'plain_text',
                         emoji: true,
-                        text: 'Start Chat'
+                        text: `I'll talk to our anonymous mate`,
                       },
                       style: 'primary',
                       value: 'Accept'
